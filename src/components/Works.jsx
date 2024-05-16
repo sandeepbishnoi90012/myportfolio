@@ -15,9 +15,15 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  website_Link
 }) => {
+
+
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+      onClick={() => window.open(website_Link, "_blank")}
+      style={{cursor: 'pointer'}}
+      >
       <Tilt
         options={{
           max: 45,
@@ -25,6 +31,7 @@ const ProjectCard = ({
           speed: 450,
         }}
         className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
+
       >
         <div className='relative w-full h-[230px]'>
           <img
